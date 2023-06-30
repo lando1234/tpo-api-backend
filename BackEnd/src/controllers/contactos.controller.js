@@ -26,7 +26,6 @@ class ContactosController {
   async createContact(req, res) {
     try {
       const { contact } = req.body;
-      console.log(contact);
       let isRegistered = await ContactosService.isContactRegistered(
         contact.email
       );
@@ -34,12 +33,12 @@ class ContactosController {
         let newContact = await ContactosService.createContact(contact);
 
         return res.status(201).json({
-          message: "Created!",
+          message: "Contactado!!",
           contact: newContact,
         });
       }
       return res.status(400).json({
-        message: "The contact is already registered",
+        message: "El contacto ya está registrado",
       });
     } catch (err) {
       console.error(err);

@@ -14,6 +14,7 @@ router.post(
     check("contact.nombre").not().isEmpty(),
     check("contact.email").not().isEmpty(),
     check("contact.descripcion").not().isEmpty(),
+    check("contact.telefono").not().isEmpty(),
 
     checkFields,
   ],
